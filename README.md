@@ -36,7 +36,7 @@ Pensado para monitorar **idosos ou pessoas vulneráveis**, o sistema usa uma câ
 ### ✅ Detecção de Quedas
 - Verifica se a **cabeça da pessoa está abaixo dos joelhos**.
 - Mantém esse estado por **mais de 3 segundos**.
-- Envia um sinal `'1'` via serial para o Arduino.
+- Envia um sinal `'Q ou F'` via serial para o Arduino.
 
 ### ✅ Reconhecimento de Sinal S.O.S
 - Detecta gestos em sequência:
@@ -59,8 +59,7 @@ Pensado para monitorar **idosos ou pessoas vulneráveis**, o sistema usa uma câ
 ## 💡 Suporte para Ambientes Escuros
 
 O sistema melhora a visualização em locais escuros:
-- Aumento de contraste e brilho
-- Equalização do histograma da imagem em escala de cinza
+- Aumento de contraste e brilhom melhorando a qualidade da detecção
 
 > ✅ Assim, continua funcionando mesmo em pouca luz (ideal para apagões).
 
@@ -84,3 +83,12 @@ O sistema melhora a visualização em locais escuros:
 
 ```bash
 pip install opencv-python cvzone pyserial
+```
+
+### Abra o Visual Studio code pela Anaconda Navigator
+ Em sequência execute o arquivo selecionando a câmera ou um vídeo para teste
+
+## MEMBROS DO GRUPO:
+* NIKOLAS RODRIGUES MOURA DOS SANTOS - RM551566 
+* THIAGO JARDIM DE OLIVEIRA - RM551624 
+* RODRIGO BRASILEIRO - RM98952 

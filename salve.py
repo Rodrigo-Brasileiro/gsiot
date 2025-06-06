@@ -9,7 +9,7 @@ from cvzone.HandTrackingModule import HandDetector
 arduino = serial.Serial('COM7', 9600)
 
 # Vídeo de entrada (ou use 0 para webcam ao vivo)
-video = cv2.VideoCapture("vd03.mp4")
+video = cv2.VideoCapture("vd03.mp4") # Execute todos os vídeos para melhor compreensão da solução!
 
 # Detectores
 pose_detector = PoseDetector()
@@ -20,7 +20,7 @@ sequencia_sos = []
 tempo_ultimo_gesto = 0
 tempo_maximo_gesto = 4  # segundos para completar a sequência S-O-S
 
-# === FUNÇÃO DE CLAREAMENTO DE IMAGEM ===
+# FUNÇÃO DE CLAREAMENTO DE IMAGEM 
 def clarear_imagem(img):
     lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
     l, a, b = cv2.split(lab)
@@ -29,7 +29,7 @@ def clarear_imagem(img):
     lab_clareado = cv2.merge((l_clareado, a, b))
     return cv2.cvtColor(lab_clareado, cv2.COLOR_LAB2BGR)
 
-# === LOOP PRINCIPAL ===
+# LOOP PRINCIPAL
 while True:
     check, img = video.read()
     if not check:
@@ -38,7 +38,7 @@ while True:
     img = cv2.resize(img, (1280, 720))
     img = clarear_imagem(img)
 
-    # === DETECÇÃO DE POSE PARA QUEDA ===
+    # DETECÇÃO DE POSE PARA QUEDA 
     pose_detector.findPose(img)
     pontos, bbox = pose_detector.findPosition(img, draw=False)
 
@@ -52,7 +52,7 @@ while True:
             cvzone.putTextRect(img, 'QUEDA DETECTADA', (x, y - 80), scale=3, thickness=3, colorR=(0, 0, 255))
             arduino.write(b'Q')  # Envia sinal de queda
 
-    # === DETECÇÃO DE GESTO S.O.S EM LIBRAS (S - O - S) ===
+    # DETECÇÃO DE GESTO S.O.S EM LIBRAS (S - O - S) 
     hands, img = hand_detector.findHands(img)
 
     if hands:

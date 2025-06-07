@@ -2,6 +2,7 @@
 
 Este projeto combina **Arduino**, **Python**, **OpenCV** e **MediaPipe** para criar um sistema inteligente capaz de detectar **quedas de pessoas** e reconhecer **sinais manuais de S.O.S em Libras**. O objetivo é oferecer suporte em **situações de emergência**, especialmente em locais com **baixa iluminação**, como durante apagões.
 
+Vídeo no Youtube sobre a solução [youtube](https://www.youtube.com/watch?v=mFOCAyr6oRA)
 ---
 
 ## 🧠 Conceito
